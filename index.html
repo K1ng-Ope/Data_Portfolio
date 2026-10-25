@@ -30,11 +30,10 @@
     overflow-x: hidden;
   }
 
-  /* ANIMATED BACKGROUND PARTICLES */
   .bg-grid {
     position: fixed;
     inset: 0;
-    background-image: 
+    background-image:
       linear-gradient(rgba(124,92,252,0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(124,92,252,0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -188,7 +187,6 @@
 
   .hero h1 em { font-style: normal; color: var(--accent2); }
 
-  /* TYPEWRITER */
   .typewriter-wrap {
     font-size: 1rem;
     color: var(--accent2);
@@ -289,7 +287,7 @@
 
   .btn-secondary:hover { border-color: var(--accent); transform: translateY(-2px); }
 
-  /* ORBIT ANIMATION */
+  /* ORBIT */
   .hero-right {
     display: flex;
     align-items: center;
@@ -323,10 +321,7 @@
     50% { box-shadow: 0 0 30px rgba(124,92,252,0.6), 0 0 60px rgba(124,92,252,0.2); }
   }
 
-  .orbit-core svg {
-    width: 48px; height: 48px;
-    color: var(--accent2);
-  }
+  .orbit-core svg { width: 48px; height: 48px; color: var(--accent2); }
 
   .orbit-ring {
     position: absolute;
@@ -420,11 +415,7 @@
     font-weight: 500;
   }
 
-  .marquee-dot {
-    width: 4px; height: 4px;
-    background: var(--accent);
-    border-radius: 50%;
-  }
+  .marquee-dot { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
 
   @keyframes marquee {
     from { transform: translateX(0); }
@@ -451,11 +442,7 @@
     margin-bottom: 1rem;
   }
 
-  .section-sub {
-    color: var(--muted);
-    max-width: 500px;
-    margin-bottom: 3rem;
-  }
+  .section-sub { color: var(--muted); max-width: 500px; margin-bottom: 3rem; }
 
   /* ABOUT */
   .about { background: var(--bg2); }
@@ -467,19 +454,10 @@
     align-items: center;
   }
 
-  .about-text p {
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 1rem;
-  }
-
+  .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
   .about-text p strong { color: var(--text); }
 
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
   .about-stat {
     background: var(--bg3);
@@ -491,13 +469,7 @@
 
   .about-stat:hover { border-color: rgba(124,92,252,0.4); transform: translateY(-3px); }
 
-  .about-stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--white);
-  }
-
+  .about-stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--white); }
   .about-stat-num span { color: var(--accent2); }
   .about-stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
 
@@ -543,12 +515,7 @@
     border: 1px solid rgba(124,92,252,0.2);
   }
 
-  .skill-bar {
-    height: 4px;
-    background: var(--border);
-    border-radius: 100px;
-    overflow: hidden;
-  }
+  .skill-bar { height: 4px; background: var(--border); border-radius: 100px; overflow: hidden; }
 
   .skill-fill {
     height: 100%;
@@ -610,12 +577,7 @@
 
   .project-body { padding: 1.5rem; }
 
-  .project-tags {
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.75rem;
-  }
+  .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
 
   .project-tag {
     font-size: 0.65rem;
@@ -634,103 +596,75 @@
     margin-bottom: 0.5rem;
   }
 
-  .project-desc {
-    font-size: 0.825rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-  }
+  .project-desc { font-size: 0.825rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
 
-  .project-link {
-    font-size: 0.8rem;
-    color: var(--accent2);
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
+  .project-open {
+    appearance: none; border: 0; background: transparent; padding: 0;
+    color: var(--accent2); font: inherit; font-size: 0.8rem; font-weight: 500;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem;
     transition: gap 0.2s;
-    position: relative;
+  }
+  .project-open:hover { gap: 0.6rem; }
+
+  /* MODAL */
+  .case-modal {
+    position: fixed; inset: 0; z-index: 300; display: none;
+    align-items: center; justify-content: center; padding: 1.25rem;
+    background: rgba(4,4,9,0.82); backdrop-filter: blur(12px);
+  }
+  .case-modal.open { display: flex; }
+
+  .case-dialog {
+    width: min(1050px, 100%); max-height: 92vh; overflow-y: auto;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 16px;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.55);
   }
 
-  .project-link::after {
-    content: '';
-    position: absolute;
-    bottom: -1px; left: 0;
-    width: 0; height: 1px;
-    background: var(--accent2);
-    transition: width 0.3s;
+  .case-top {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem;
+    padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; background: rgba(17,17,24,0.96); backdrop-filter: blur(10px); z-index: 2;
   }
 
-  .project-link:hover { gap: 0.6rem; }
-  .project-link:hover::after { width: 100%; }
-
-  /* BLOG */
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  .case-close {
+    border: 1px solid var(--border); background: var(--bg3); color: var(--text);
+    border-radius: 8px; min-width: 38px; height: 38px; cursor: pointer; font-size: 1.2rem;
   }
 
-  .blog-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.75rem;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s;
+  .case-content { padding: 1.75rem; }
+  .case-intro { color: var(--muted); max-width: 760px; margin-bottom: 1.75rem; }
+  .case-section { margin-top: 1.75rem; }
+  .case-section h3 { color: var(--white); font-family: 'Syne', sans-serif; font-size: 1.05rem; margin-bottom: 0.75rem; }
+  .case-section p, .case-section li { color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
+  .case-section ul { padding-left: 1.2rem; }
+
+  .case-meta-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0.8rem; }
+  .case-meta { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+  .case-meta span { display: block; color: var(--muted); font-size: 0.72rem; margin-bottom: 0.25rem; }
+  .case-meta strong { color: var(--text); font-size: 0.85rem; font-weight: 500; }
+
+  .case-gallery { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+  .case-gallery-item {
+    min-height: 180px; border: 1px dashed rgba(167,139,250,0.35); border-radius: 12px;
+    background: linear-gradient(135deg, rgba(124,92,252,0.08), rgba(10,10,15,0.45));
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 1.25rem; color: var(--muted); font-size: 0.82rem;
   }
+  .case-gallery-item img { width: 100%; height: 100%; max-height: 360px; object-fit: contain; border-radius: 8px; }
+  .case-placeholder { max-width: 260px; }
+  .case-placeholder strong { display: block; color: var(--text); margin-bottom: 0.35rem; }
 
-  .blog-card:hover { border-color: rgba(124,92,252,0.3); transform: translateY(-3px); }
-
-  .blog-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
+  .case-next-step {
+    margin-top: 1.5rem; padding: 1rem 1.1rem; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--bg3); color: var(--muted);
+    font-size: 0.82rem; line-height: 1.7;
   }
-
-  .blog-card:hover::before { transform: scaleX(1); }
-
-  .blog-coming {
-    position: absolute;
-    top: 1rem; right: 1rem;
-    font-size: 0.65rem;
-    color: var(--accent2);
-    background: rgba(124,92,252,0.1);
-    padding: 0.2rem 0.6rem;
-    border-radius: 100px;
-    border: 1px solid rgba(124,92,252,0.2);
-  }
-
-  .blog-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; }
-
-  .blog-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-  }
-
-  .blog-excerpt { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
 
   /* CONTACT */
   .contact { background: var(--bg2); }
   .contact-inner { max-width: 600px; }
 
-  .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
 
   .contact-link {
     display: flex;
@@ -780,40 +714,21 @@
   footer p { font-size: 0.8rem; color: var(--muted); }
 
   /* SCROLL REVEAL */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: none; }
 
-  /* STAGGER CHILDREN */
-  .stagger > * {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
+  .stagger > * { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
   .stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.15s; }
   .stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.25s; }
   .stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.35s; }
   .stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.45s; }
   .stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.55s; }
+  .stagger.visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.65s; }
 
-  /* KEYFRAMES */
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; text-align: center; padding-top: 100px; }
     .hero-right { display: none; }
@@ -821,6 +736,8 @@
     .hero-btns { justify-content: center; }
     nav ul { display: none; }
     .stats { justify-content: center; }
+    .case-meta-grid, .case-gallery { grid-template-columns: 1fr; }
+    .case-top, .case-content { padding: 1.1rem; }
   }
 </style>
 </head>
@@ -837,7 +754,6 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#blog">Blog</a></li>
     <li><a href="#contact" class="nav-cta">Hire Me</a></li>
   </ul>
 </nav>
@@ -845,7 +761,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div href = "#contact" class="hero-badge">Open to opportunities</div>
+    <div class="hero-badge">Open to opportunities</div>
     <h1>Alimi Opeyemi<br><em>Quadri</em></h1>
     <div class="typewriter-wrap">
       <span class="typewriter" id="typewriter"></span>
@@ -854,7 +770,8 @@
     <div class="hero-tags">
       <span class="tag">Statistics Student · FUOYE</span>
       <span class="tag">Excel</span>
-      <span class="tag">Python</span>
+      <span class="tag">NumPy</span>
+      <span class="tag">Pandas</span>
       <span class="tag">SQL</span>
       <span class="tag">Data Analysis</span>
       <span class="tag">Graphic Design</span>
@@ -888,7 +805,7 @@
       </div>
       <div class="orbit-ring orbit-ring-1">
         <div class="orbit-icon" title="Excel">📊</div>
-        <div class="orbit-icon" title="Python">🐍</div>
+        <div class="orbit-icon" title="NumPy">🔢</div>
       </div>
       <div class="orbit-ring orbit-ring-2">
         <div class="orbit-icon" title="Power BI">📈</div>
@@ -905,7 +822,7 @@
   <div class="marquee-track">
     <span class="marquee-item"><span class="marquee-dot"></span> Data Analysis</span>
     <span class="marquee-item"><span class="marquee-dot"></span> Microsoft Excel</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Python · pandas</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> NumPy · Pandas</span>
     <span class="marquee-item"><span class="marquee-dot"></span> SQL</span>
     <span class="marquee-item"><span class="marquee-dot"></span> Statistical Thinking</span>
     <span class="marquee-item"><span class="marquee-dot"></span> Data Cleaning</span>
@@ -915,7 +832,7 @@
     <span class="marquee-item"><span class="marquee-dot"></span> Graphic Design</span>
     <span class="marquee-item"><span class="marquee-dot"></span> Data Analysis</span>
     <span class="marquee-item"><span class="marquee-dot"></span> Microsoft Excel</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Python · pandas</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> NumPy · Pandas</span>
     <span class="marquee-item"><span class="marquee-dot"></span> SQL</span>
     <span class="marquee-item"><span class="marquee-dot"></span> Statistical Thinking</span>
     <span class="marquee-item"><span class="marquee-dot"></span> Data Cleaning</span>
@@ -934,7 +851,7 @@
       <h2 class="section-title">Numbers are my language</h2>
       <p>I'm <strong>Alimi Opeyemi Quadri</strong>, a 300-level Statistics student at Federal University Oye-Ekiti (FUOYE) with a growing focus on data analysis. I work at the intersection of statistical thinking and practical data tools.</p>
       <p>Outside academics, I'm a <strong>graphic designer</strong> — which means I don't just analyse data, I communicate it clearly. Good analysis means nothing if the insight isn't understood.</p>
-      <p>Currently building my data skills through <strong>real-world projects</strong> in Excel and Python, and preparing for SIWES where I plan to deepen that foundation further.</p>
+      <p>Currently building my data skills through <strong>real-world projects</strong> in Excel, NumPy and Pandas, and preparing for SIWES where I plan to deepen that foundation further.</p>
     </div>
     <div class="about-stats stagger">
       <div class="about-stat">
@@ -966,16 +883,30 @@
     <div class="skill-item">
       <div class="skill-header">
         <div class="skill-name"><span>📊</span> Microsoft Excel</div>
-        <span class="skill-level">Intermediate</span>
+        <span class="skill-level">Advanced</span>
       </div>
-      <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
     </div>
     <div class="skill-item">
       <div class="skill-header">
-        <div class="skill-name"><span>🐍</span> Python</div>
+        <div class="skill-name"><span>🔢</span> NumPy</div>
         <span class="skill-level">Beginner</span>
       </div>
-      <div class="skill-bar"><div class="skill-fill" data-width="47"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="57"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-header">
+        <div class="skill-name"><span>🐼</span> Pandas</div>
+        <span class="skill-level">Intermediate</span>
+      </div>
+      <div class="skill-bar"><div class="skill-fill" data-width="67"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-header">
+        <div class="skill-name"><span>🗄️</span> SQL</div>
+        <span class="skill-level">Intermediate</span>
+      </div>
+      <div class="skill-bar"><div class="skill-fill" data-width="67"></div></div>
     </div>
     <div class="skill-item">
       <div class="skill-header">
@@ -983,13 +914,6 @@
         <span class="skill-level">Learning</span>
       </div>
       <div class="skill-bar"><div class="skill-fill" data-width="10"></div></div>
-    </div>
-    <div class="skill-item">
-      <div class="skill-header">
-        <div class="skill-name"><span>🗄️</span> SQL</div>
-        <span class="skill-level">Beginner</span>
-      </div>
-      <div class="skill-bar"><div class="skill-fill" data-width="5"></div></div>
     </div>
     <div class="skill-item">
       <div class="skill-header">
@@ -1016,7 +940,7 @@
   <div class="projects-grid stagger reveal">
     <div class="project-card">
       <div class="project-thumb">
-        <img src="Images/Global Supermarket Image.png" style="width:100%; height:100%; object-fit:cover;">
+        <img src="Images/Global Supermarket Image.png" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="project-body">
         <div class="project-tags">
@@ -1026,12 +950,12 @@
         </div>
         <div class="project-title">Global Superstore Analysis</div>
         <p class="project-desc">Sales performance analysis of a global retail dataset — revenue by region, product category trends, and profitability insights across international markets.</p>
-        <a href="https://docs.google.com/spreadsheets/d/1j2FKhNwTa8uyfzXTc5gZVFcHLu9a5eV9/edit?usp=sharing" target="_blank" class="project-link">View project →</a>
+        <button type="button" class="project-open" data-case="superstore">Explore case study →</button>
       </div>
     </div>
     <div class="project-card">
       <div class="project-thumb">
-        <img src="Images/Student Performance Analysis.png" style="width:100%; height:100%; object-fit:cover;">
+        <img src="Images/Student Performance Analysis.png" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="project-body">
         <div class="project-tags">
@@ -1041,12 +965,12 @@
         </div>
         <div class="project-title">Student Performance Analysis</div>
         <p class="project-desc">Analysed academic performance of 1,000 students to identify what factors drive exam scores — study time, internet access, parental education, and part-time work.</p>
-        <a href="https://docs.google.com/spreadsheets/d/1CqhazaS69TJCz93PdWwXybQJlAOCAB4u/edit?usp=sharing" target="_blank" class="project-link">View project →</a>
+        <button type="button" class="project-open" data-case="student">Explore case study →</button>
       </div>
     </div>
     <div class="project-card">
       <div class="project-thumb">
-        <img src="Images/2024 Jamb Student Report.png" style="width:100%; height:100%; object-fit:cover;">
+        <img src="Images/2024 Jamb Student Report.png" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="project-body">
         <div class="project-tags">
@@ -1056,51 +980,50 @@
         </div>
         <div class="project-title">JAMB 2024 Performance Report</div>
         <p class="project-desc">Analysed 3,000+ candidate records to identify what predicts JAMB scores — study time, school type, distance from school, and socioeconomic indicators.</p>
-        <a href="https://docs.google.com/spreadsheets/d/1Vz0aBCyIDXSWKcGpKEcieyWx0gIlMLiZ/edit?usp=sharing" target="_blank" class="project-link">View project →</a>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-thumb">🛒</div>
-      <div class="project-body">
-        <div class="project-tags">
-          <span class="project-tag">Excel</span>
-          <span class="project-tag">Sales Analysis</span>
-          <span class="project-tag">Dashboard</span>
-        </div>
-        <div class="project-title">Shoprite Ekiti Sales Analysis</div>
-        <p class="project-desc">6-month supermarket sales analysis — revenue by category, cashier performance, and payment method breakdown. Built with pivot tables, charts, and insight reporting.</p>
-        <a href="#" class="project-link">View project →</a>
+        <button type="button" class="project-open" data-case="jamb">Explore case study →</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
-<section id="blog">
-  <div class="section-label">Writing</div>
-  <h2 class="section-title">Blog</h2>
-  <p class="section-sub">Thoughts on data, learning, and the journey from statistics to analysis.</p>
-  <div class="blog-grid stagger reveal">
-    <div class="blog-card">
-      <span class="blog-coming">Coming soon</span>
-      <div class="blog-date">— 2025</div>
-      <div class="blog-title">What I learned from analysing 3,000 JAMB candidates in Excel</div>
-      <p class="blog-excerpt">The surprising factors that actually predict exam performance — and the ones that don't matter as much as you'd think.</p>
+<!-- CASE STUDY MODAL -->
+<div class="case-modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseTitle">
+  <div class="case-dialog">
+    <div class="case-top">
+      <div>
+        <div class="section-label">Project case study</div>
+        <h2 class="section-title" id="caseTitle" style="margin-bottom:0.5rem;"></h2>
+        <div class="project-tags" id="caseTags"></div>
+      </div>
+      <button class="case-close" id="caseClose" type="button" aria-label="Close case study">×</button>
     </div>
-    <div class="blog-card">
-      <span class="blog-coming">Coming soon</span>
-      <div class="blog-date">— 2025</div>
-      <div class="blog-title">Why I'm learning Python after Excel — and what's different</div>
-      <p class="blog-excerpt">Excel got me started. Python is where I'm going. Here's what the transition actually feels like as a statistics student.</p>
-    </div>
-    <div class="blog-card">
-      <span class="blog-coming">Coming soon</span>
-      <div class="blog-date">— 2025</div>
-      <div class="blog-title">5 Excel tricks every beginner data analyst should know</div>
-      <p class="blog-excerpt">AVERAGEIF, nested IFs, GETPIVOTDATA — the formulas that changed how I work with data.</p>
+    <div class="case-content">
+      <p class="case-intro" id="caseIntro"></p>
+      <div class="case-meta-grid" id="caseMeta"></div>
+      <div class="case-section">
+        <h3>Dataset overview</h3>
+        <p id="caseDataset"></p>
+      </div>
+      <div class="case-section">
+        <h3>Questions explored</h3>
+        <ul id="caseQuestions"></ul>
+      </div>
+      <div class="case-section">
+        <h3>Analysis workflow</h3>
+        <ul id="caseWorkflow"></ul>
+      </div>
+      <div class="case-section">
+        <h3>Key findings</h3>
+        <p id="caseFindings"></p>
+      </div>
+      <div class="case-section">
+        <h3>Tables, charts & dashboard</h3>
+        <div class="case-gallery" id="caseGallery"></div>
+      </div>
+      <div class="case-next-step" id="caseNote"></div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -1160,16 +1083,76 @@
 </footer>
 
 <script>
+  const caseStudies = {
+    superstore: {
+      title: 'Global Superstore Analysis',
+      tags: ['Excel', 'Sales Analysis', 'Global Retail'],
+      intro: 'A retail sales analysis focused on understanding performance across regions, product categories, revenue and profitability.',
+      dataset: 'A global retail dataset. Add the source, date range, row count, key fields and any cleaning decisions here when finalizing the case study.',
+      meta: [['Tool','Microsoft Excel'],['Project type','Retail sales analysis'],['Status','Case study in progress']],
+      questions: ['Which regions and product categories contribute most to revenue?','How does profitability vary across markets?','Which patterns deserve further investigation?'],
+      workflow: ['Inspect the dataset structure and data types.','Clean missing, inconsistent or duplicate values where needed.','Summarize revenue and profit by region and category.','Build pivot tables and visuals to communicate the results.'],
+      findings: 'Add your verified findings here. Include the actual numbers, the pattern you observed, and why it matters.',
+      note: 'Next: add dataset details, your actual findings, and screenshots of the cleaned table, pivot tables and final dashboard. Existing project link: Google Sheets.',
+      visuals: ['Dataset / cleaned table screenshot','Pivot table or summary output','Charts showing key trends','Final dashboard screenshot']
+    },
+    student: {
+      title: 'Student Performance Analysis',
+      tags: ['Excel', 'Pivot Tables', 'Education Data'],
+      intro: 'An exploration of academic performance across a student dataset, looking at study time, internet access, parental education and part-time work.',
+      dataset: 'The dataset contains 1,000 students. Add the source, time period, exact fields and cleaning steps here.',
+      meta: [['Tool','Microsoft Excel'],['Dataset size','1,000 students'],['Project type','Education analysis']],
+      questions: ['How do exam scores vary with study time?','What patterns appear across internet access and parental education?','How are scores distributed for students with part-time work?'],
+      workflow: ['Review columns, categories and missing values.','Check score distributions and summary statistics.','Compare groups using pivot tables and charts.','Record findings supported by the actual outputs.'],
+      findings: 'Add your verified findings here, including specific comparisons or values from your analysis.',
+      note: 'Next: add the dataset source, your strongest three findings, and screenshots of your pivot tables, charts and final summary.',
+      visuals: ['Dataset / cleaned table screenshot','Pivot table by student factor','Exam score comparison chart','Dashboard or summary view']
+    },
+    jamb: {
+      title: 'JAMB 2024 Performance Report',
+      tags: ['Excel', 'Education Data', '3,000+ rows'],
+      intro: 'An analysis of JAMB candidate records, exploring potential relationships between exam scores and study time, school type, distance from school and socioeconomic indicators.',
+      dataset: 'The dataset contains more than 3,000 candidate records. Add the exact source, date range, fields and data-quality checks here.',
+      meta: [['Tool','Microsoft Excel'],['Dataset size','3,000+ records'],['Project type','Performance analysis']],
+      questions: ['How do scores differ across school types?','What patterns appear across study time and distance from school?','Which socioeconomic indicators show notable associations with scores?'],
+      workflow: ['Inspect and clean the candidate records.','Summarize score distributions and relevant groups.','Compare groups using formulas, pivot tables and charts.','State limitations and avoid causal claims the data cannot support.'],
+      findings: 'Add your verified findings here. Include numbers from the report and clearly distinguish observed patterns from assumptions.',
+      note: 'Next: add your actual findings and screenshots of the source table, summary tables, charts and final report.',
+      visuals: ['Dataset / cleaned table screenshot','Score summary table','Comparison chart by group','Final report or dashboard']
+    }
+  };
+
+  const caseModal = document.getElementById('caseModal');
+  const closeCaseModal = () => { caseModal.classList.remove('open'); document.body.style.overflow = ''; };
+
+  document.querySelectorAll('[data-case]').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = caseStudies[button.getAttribute('data-case')];
+      if (!item) return;
+      document.getElementById('caseTitle').textContent = item.title;
+      document.getElementById('caseIntro').textContent = item.intro;
+      document.getElementById('caseDataset').textContent = item.dataset;
+      document.getElementById('caseFindings').textContent = item.findings;
+      document.getElementById('caseNote').textContent = item.note;
+      document.getElementById('caseTags').innerHTML = item.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
+      document.getElementById('caseMeta').innerHTML = item.meta.map(p => `<div class="case-meta"><span>${p[0]}</span><strong>${p[1]}</strong></div>`).join('');
+      document.getElementById('caseQuestions').innerHTML = item.questions.map(v => `<li>${v}</li>`).join('');
+      document.getElementById('caseWorkflow').innerHTML = item.workflow.map(v => `<li>${v}</li>`).join('');
+      document.getElementById('caseGallery').innerHTML = item.visuals.map(v => `<div class="case-gallery-item"><div class="case-placeholder"><strong>${v}</strong><span>Visual placeholder · add your screenshot when ready</span></div></div>`).join('');
+      caseModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('caseClose').focus();
+    });
+  });
+
+  document.getElementById('caseClose').addEventListener('click', closeCaseModal);
+  caseModal.addEventListener('click', e => { if (e.target === caseModal) closeCaseModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && caseModal.classList.contains('open')) closeCaseModal(); });
+
   // Typewriter
-  const phrases = [
-    'Statistics Student',
-    'Data Analyst in Progress',
-    'Excel, Python & SQL',
-    'Turning numbers into insights'
-  ];
+  const phrases = ['Statistics Student','Data Analyst in Progress','Excel, NumPy, Pandas & SQL','Turning numbers into insights'];
   let phraseIdx = 0, charIdx = 0, deleting = false;
   const el = document.getElementById('typewriter');
-
   function type() {
     const phrase = phrases[phraseIdx];
     if (!deleting) {
@@ -1183,7 +1166,7 @@
   }
   type();
 
-  // Scroll reveal + stagger + skill bars
+  // Scroll reveal + skill bars
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1197,18 +1180,13 @@
 
   document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
 
-  // Nav active link highlight on scroll
+  // Nav active highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav ul a');
-
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 120) current = section.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-      link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent2)' : '';
-    });
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id'); });
+    navLinks.forEach(link => { link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent2)' : ''; });
   });
 </script>
 </body>
