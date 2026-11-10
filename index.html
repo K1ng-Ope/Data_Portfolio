@@ -940,16 +940,17 @@
   <div class="projects-grid stagger reveal">
     <div class="project-card">
       <div class="project-thumb">
-        <img src="Images/Global Supermarket Image.png" style="width:100%;height:100%;object-fit:cover;">
+        <img src="Images/Social Media Analysis/1.png" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="project-body">
         <div class="project-tags">
-          <span class="project-tag">Excel</span>
-          <span class="project-tag">Sales Analysis</span>
-          <span class="project-tag">Global Data</span>
+          <span class="project-tag"> Microsoft Excel</span>
+          <span class="project-tag"> Behavioural Analysis</span>
+          <span class="project-tag"> Education & Well-being</span>
         </div>
-        <div class="project-title">Global Superstore Analysis</div>
-        <p class="project-desc">Sales performance analysis of a global retail dataset — revenue by region, product category trends, and profitability insights across international markets.</p>
+        <div class="project-title">Social Media Usage Analysis</div>
+        <p class="project-desc">An analysis of student social media usage patterns and their relationship with academic performance, sleep, stress and
+        mental well-being, using Excel to explore behavioural patterns and identify key trends.</p>
         <button type="button" class="project-open" data-case="superstore">Explore case study →</button>
       </div>
     </div>
@@ -1021,6 +1022,9 @@
         <div class="case-gallery" id="caseGallery"></div>
       </div>
       <div class="case-next-step" id="caseNote"></div>
+      <a id="caseDriveLink" href="#" target="_blank" rel="noopener noreferrer">
+        View Project Files
+      </a>
     </div>
   </div>
 </div>
@@ -1084,17 +1088,43 @@
 
 <script>
   const caseStudies = {
-    superstore: {
-      title: 'Global Superstore Analysis',
-      tags: ['Excel', 'Sales Analysis', 'Global Retail'],
-      intro: 'A retail sales analysis focused on understanding performance across regions, product categories, revenue and profitability.',
-      dataset: 'A global retail dataset. Add the source, date range, row count, key fields and any cleaning decisions here when finalizing the case study.',
-      meta: [['Tool','Microsoft Excel'],['Project type','Retail sales analysis'],['Status','Case study in progress']],
-      questions: ['Which regions and product categories contribute most to revenue?','How does profitability vary across markets?','Which patterns deserve further investigation?'],
-      workflow: ['Inspect the dataset structure and data types.','Clean missing, inconsistent or duplicate values where needed.','Summarize revenue and profit by region and category.','Build pivot tables and visuals to communicate the results.'],
-      findings: 'Add your verified findings here. Include the actual numbers, the pattern you observed, and why it matters.',
-      note: 'Next: add dataset details, your actual findings, and screenshots of the cleaned table, pivot tables and final dashboard. Existing project link: Google Sheets.',
-      visuals: ['Dataset / cleaned table screenshot','Pivot table or summary output','Charts showing key trends','Final dashboard screenshot']
+    social: {
+      title: 'Social Media Usage Analysis',
+      tags: ['Excel', 'Data Analysis', 'Behavioural Analysis', 'Education & Well-being'],
+      intro: 'This project explores how students use social media and examines the relationships between their usage patterns, academic performance and well-being. Using Microsoft Excel, I analysed student data to identify behavioural trends and investigate how daily usage, late-night activity and social comparison relate to students academic and social experiences.',
+      dataset: 'The dataset was obtained from Kaggle and initially contained 4,500 student records. It included information on students age, gender, academic level, preferred social media platform, daily usage hours, weekend usage, device type, sleep patterns, social comparison frequency, perceived stress, mental health index, academic performance GPA and perceived overall impact. Although the dataset was generally clean, missing values were identified in the Academic Performance GPA column and another field. Since the affected records represented less than 2% of the original dataset, the incomplete rows were removed, reducing the dataset from 4,500 to 4,369 records. Two additional categorical columns, Age Bracket and Usage Bracket, were created to group students by age and daily social media usage. These groupings made comparisons and visual analysis easier.',
+      meta: [['Tool', 'Microsoft Excel'], ['Dataset size', '4,369 students'], ['Project type', 'Behavioural and impact analysis']],
+      questions: ['Which social media platforms are most commonly used by students?', 'How many hours do students spend on social media daily?', 'How do late-night usage and social comparison vary among students?', 'How does social media usage relate to academic performance?', 'What relationships exist between usage patterns, sleep quality, perceived stress and mental health?', 'How do students perceive the overall impact of social media on their lives?'],
+      workflow: ['Reviewed the dataset and checked for missing values.', 
+                 'Removed incomplete records to obtain a final dataset of 4,369 students.', 
+                 'Created age and daily usage categories to simplify comparisons.', 
+                 'Used PivotTables to summarise platform preferences, usage patterns and behavioural characteristics.', 
+                 'Compared academic performance, sleep quality, stress and mental health across usage categories.', 
+                 'Created charts and dashboards to present the behavioural and impact analysis.'],
+   findings: [
+    'A. Behaviour Analysis',
+    'Instagram was the most frequently selected primary social media platform, followed by TikTok.',
+    'The largest group of students (1,468) reported daily social media usage of 2–4 hours, while another 1,413 students reported usage of 4–6 hours.',
+    'Approximately 58.6% of the students reported using social media late at night.',
+    'Social comparison was common among respondents: 1,216 students reported engaging in it frequently, while 613 reported doing so always.',
+
+    'B. Impact Analysis',
+    'Although the majority of students perceived the overall impact of social media as beneficial, the analysis revealed less favourable patterns in academic performance, sleep and mental well-being among students with higher daily usage.',
+
+    'C. Academic Level',
+    'Average GPA was relatively similar across the three academic levels, suggesting little difference in academic performance between these groups in the dataset.',
+
+    'D. Overall Findings',
+    'The analysis revealed several patterns in students social media usage and its relationship with their academic and personal well-being. Instagram was the most commonly selected platform, while approximately 58.6% of students reported late-night usage. A notable pattern emerged between daily usage and academic performance. Average GPA declined from 3.80 among students who used social media for 0–2 hours daily to 2.89 among those who used it for 8 hours or more. Higher usage categories also recorded lower average mental health index scores, higher perceived stress and shorter sleep duration. Despite these patterns, 81.8% of respondents described the overall impact of social media as beneficial, while only 3.7% described it as negative. This highlights a difference between students overall perception and the patterns observed across the measured well-being indicators.',
+],
+      note: 'View the complete project files below.',
+      driveLink: 'https://docs.google.com/spreadsheets/d/1Z2phPAci2tfPCYoGOWdI4bCem81hSZMI/edit?usp=drive_link&ouid=100920819331989985428&rtpof=true&sd=true',
+      visuals: [
+        {
+          title: 'Bihaviour Pivot Tables',
+          Image: 'Images/Social Media Analysis/Behaviour Pivot'
+        }
+      ]
     },
     student: {
       title: 'Student Performance Analysis',
@@ -1122,12 +1152,19 @@
     }
   };
 
+  const caseDriveLink = document.getElementById('caseDriveLink');
+
+caseDriveLink.href = data.driveLink || '#';
+caseDriveLink.style.display = data.driveLink ? 'inline-block' : 'none';
   const caseModal = document.getElementById('caseModal');
   const closeCaseModal = () => { caseModal.classList.remove('open'); document.body.style.overflow = ''; };
 
   document.querySelectorAll('[data-case]').forEach(button => {
     button.addEventListener('click', () => {
       const item = caseStudies[button.getAttribute('data-case')];
+      const caseDriveLink = document.getElementById('caseDriveLink');
+      caseDriveLink.href = data.driveLink || '#';
+      caseDriveLink.style.display = data.driveLink ? 'inline-block' : 'none';
       if (!item) return;
       document.getElementById('caseTitle').textContent = item.title;
       document.getElementById('caseIntro').textContent = item.intro;
